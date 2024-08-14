@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "config/material-tailwind-theme-provider";
 import ReactQueryClientProvider from "../config/ReactQueryClientProvider";
+import Header from "components/header";
+import Footer from "components/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +27,9 @@ export default function RootLayout({ children }) {
           </head>
           <body>
             <ReactQueryClientProvider>
+              <Header />
               {children}
+              <Footer />
             </ReactQueryClientProvider>
           </body>
         </html>

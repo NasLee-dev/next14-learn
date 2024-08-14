@@ -1,18 +1,20 @@
 'use client'
 
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Logo() {
   return (
     <div className="flex items-center gap-2">
-      <Image 
-        src="/images/dropbox_icon.png"
-        alt="Dropbox Logo"
-        width={50}
-        height={50}
-        className="!w-10 !h-auto"
-      />
-      <span className="text-xl font-bold">DropBox</span>
+      <Link href={"/"}>
+        <Image 
+          src="/images/tmdbflix_logo.png"
+          alt="TMDBFlix Logo"
+          width={50}
+          height={50}
+          className="!w-20 !h-auto"
+        />
+      </Link>
     </div>
   )
 }
