@@ -5,6 +5,7 @@ export const metadata = {
   description: "A Netflix clone using TMDB API",
 }
 
+
 export default function Home() {
   return (
     <div>

@@ -1,26 +1,26 @@
 'use client'
 
-export default function DetailUI({ id }) {
+export default function DetailUI({ movie }) {
   return (
     <div className="flex flex-col md:flex-row items-center">
       <img 
-        src="https://image.tmdb.org/t/p/original/6Y9fl8tD1xtyUr9jI4j8Zzv4cLw.jpg"
+        src={movie.image_url}
         className="w-1/3"
       />
       <div className="w-full md:w-2/3 flex flex-col p-6 gap-4 text-black items-center md:items-start">
         <h1 className="text-3xl font-bold text-black">
-          Dune: Part Two
+          {movie.title}
         </h1>
         <p className="text-lg font-medium text-black">
-          Dune Part Two
+          {movie.overview}
         </p>
         <div>
           <p>
             <i className="fas fa-star mr-1"></i>
-            Rating: 8.5
+            {movie.vote_average}
           </p>
-          <p>Popularity </p>
-          <p>Release Date: 2023-10-20</p>
+          <p>Popularity : {movie.popularity}</p>
+          <p>Release Date: {movie.release_date}</p>
         </div>
       </div>
     </div>

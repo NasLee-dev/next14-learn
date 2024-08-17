@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "config/material-tailwind-theme-provider";
 import ReactQueryClientProvider from "../config/ReactQueryClientProvider";
 import Header from "components/header";
 import Footer from "components/footer";
+import RecoilProvider from "config/RecoilProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,26 +13,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ThemeProvider>
-        {/* @ts-ignore */}
-        <html lang="en">
-          <head>
-            <link
-              rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-              integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-              crossOrigin="anonymous"
-              referrerPolicy="no-referrer"
-              />
-          </head>
-          <body>
-            <ReactQueryClientProvider>
-              <Header />
-              {children}
-              <Footer />
-            </ReactQueryClientProvider>
-          </body>
-        </html>
-      </ThemeProvider>
+    <RecoilProvider>
+      <ReactQueryClientProvider>
+        <ThemeProvider>
+            {/* @ts-ignore */}
+            <html lang="en">
+              <head>
+                <link
+                  rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+                  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
+                  />
+              </head>
+              <body>
+                <Header />
+                {children}
+                <Footer />
+              </body>
+            </html>
+          </ThemeProvider>
+      </ReactQueryClientProvider>
+    </RecoilProvider>
   );
 }
