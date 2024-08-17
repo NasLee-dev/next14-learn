@@ -1,6 +1,7 @@
 'use client'
 
 export default function DetailUI({ movie }) {
+  console.log(movie)
   return (
     <div className="flex flex-col md:flex-row items-center">
       <img 
