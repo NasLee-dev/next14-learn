@@ -1,13 +1,10 @@
+import UI from "./ui";
 
 export const metadata = {
-  title: "",
+  title: "TMDBFLIX",
   description: "A Netflix clone using TMDB API",
 }
 
 export default function Home() {
-  return (
-    <div>
-      main page
-    </div>
-  )
+  return <UI />;
 }
