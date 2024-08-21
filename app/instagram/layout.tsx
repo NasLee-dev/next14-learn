@@ -2,8 +2,11 @@
 import { ThemeProvider } from "config/material-tailwind-theme-provider";
 import ReactQueryClientProvider from "config/ReactQueryClientProvider";
 import RecoilProvider from "config/RecoilProvider";
+import MainLayout from "./components/layouts/main-layout";
+import Auth from "./components/auth";
 
 export default function RootLayout({ children }) {
+  const loggedIn = true;
   return (
     <RecoilProvider>
       <ReactQueryClientProvider>
@@ -20,7 +23,7 @@ export default function RootLayout({ children }) {
                   />
               </head>
               <body>
-                {children}
+                {loggedIn ? <MainLayout>{children}</MainLayout> : <Auth />}
               </body>
             </html>
           </ThemeProvider>

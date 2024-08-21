@@ -1,3 +1,5 @@
+import LogoutButton from "./components/logoutButton";
+
 export const metadata = {
   title: "Instagram",
   description: "Instagram Page",
@@ -5,8 +7,9 @@ export const metadata = {
 
 export default function InstagramPage() {
   return (
-    <main>
-      <h1>Instagram Page</h1>
+    <main className="w-full h-screen flex flex-col items-center justify-center">
+      <h1>Welcome Instagram</h1>
+      <LogoutButton />
     </main>
   );
 }
