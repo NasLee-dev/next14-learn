@@ -1,5 +1,8 @@
+import { createBrowserSupabaseClient } from "utils/supabase/client";
+
 /* eslint-disable @next/next/no-img-element */
 export default function Sidebar() {
+  const supabase = createBrowserSupabaseClient();
   return (
     <aside className="h-screen p-6 border-r border-gray-300 flex flex-col justify-between">
       <div className="flex justify-between items-center p-4 border-b border-gray-200">

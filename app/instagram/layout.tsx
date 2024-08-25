@@ -1,12 +1,13 @@
-'use client'
 import { ThemeProvider } from "config/material-tailwind-theme-provider";
 import ReactQueryClientProvider from "config/ReactQueryClientProvider";
 import RecoilProvider from "config/RecoilProvider";
 import MainLayout from "./components/layouts/main-layout";
 import Auth from "./components/auth";
+import { createServerSupabaseClient } from "utils/supabase/server";
 
-export default function RootLayout({ children }) {
-  const loggedIn = true;
+export default async function RootLayout({ children }) {
+  const supabase = await createServerSupabaseClient();
+  const { data: { session } } = await supabase.auth.getSession();
   return (
     <RecoilProvider>
       <ReactQueryClientProvider>
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
                   />
               </head>
               <body>
-                {loggedIn ? <MainLayout>{children}</MainLayout> : <Auth />}
+                {session?.user ? <MainLayout>{children}</MainLayout> : <Auth />}
               </body>
             </html>
           </ThemeProvider>
