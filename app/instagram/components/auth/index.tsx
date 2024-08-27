@@ -8,7 +8,7 @@ export default function Auth() {
   const [view, setView] = useState('SIGNUP')
   return (
     <main className="h-screen w-screen flex justify-center items-center bg-gradient-to-br from-purple-50 to-light-blue-50">
-      {view === 'SIGNUP' ? <Signin setView={setView} /> : <Signup setView={setView}/>}
+      {view === 'SIGNIN' ? <Signin setView={setView} /> : <Signup setView={setView}/>}
     </main>
   )
 }
