@@ -11,16 +11,16 @@ export default function Sidebar() {
     <aside className="w-fit h-screen p-6 border-r border-gray-300 flex flex-col justify-between">
       {/* Home버튼 + People Page ~ Chat Page */}
       <div className="flex flex-col gap-4">
-        <Link href="/">
+        <Link href="/instagram/">
           <Home className="text-2xl mb-10" />
         </Link>
-        <Link href="/people">
+        <Link href="/instagram/people">
           <People className="text-2xl" />
         </Link>
-        <Link href="/discover">
+        <Link href="/instagram/discover">
           <Search className="text-2xl" />
         </Link>
-        <Link href="/chat">
+        <Link href="/instagram/chat">
           <Send className="text-2xl" />
         </Link>
       </div>
