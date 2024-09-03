@@ -16,6 +16,7 @@
     "@mui/icons-material": "^5.16.6",
     "@supabase/ssr": "^0.4.0",
     "@tanstack/react-query": "^5.51.21",
+    "javascript-time-ago": "^2.5.11",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

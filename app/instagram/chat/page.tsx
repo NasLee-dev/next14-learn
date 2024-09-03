@@ -1,16 +1,11 @@
-import Person from "../components/chat/Person";
+import ChatPeopleList from "../components/chat/ChatPeopleList";
+import ChatScreen from "../components/chat/ChatScreen";
 
 export default function ChatPage() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <Person 
-        index={0} 
-        userId="wootaik" 
-        name="John Doe" 
-        onlineAt={new Date().toISOString()} 
-        isActive={true}
-        onChatScreen={false}
-      />
+      <ChatPeopleList />
+      <ChatScreen />
     </div>
   );
 }
