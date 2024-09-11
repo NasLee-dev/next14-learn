@@ -1,27 +1,44 @@
-/* eslint-disable @next/next/no-img-element */
-'use client'
-import { getRandomImage } from "app/instagram/util/random"
-import TimeAgo from 'javascript-time-ago'
-import ko from 'javascript-time-ago/locale/ko'
+"use client";
 
-TimeAgo.addDefaultLocale(ko)
+import TimeAgo from "javascript-time-ago";
+import ko from "javascript-time-ago/locale/ko";
+import { getRandomImage } from "utils/random";
 
-const timeAgo = new TimeAgo('ko-KR')
+TimeAgo.addDefaultLocale(ko);
 
-export default function Person({ index, userId, name, onlineAt, isActive = false, onChatScreen = false, onClick = null }) {
+const timeAgo = new TimeAgo("ko-KR");
+
+export default function Person({
+  index,
+  userId,
+  name,
+  onlineAt,
+  isActive = false,
+  onChatScreen = false,
+  onClick = null,
+}) {
   return (
-    <div className={`flex w-full min-w-60 ${onClick && 'cursor-pointer'} gap-4 items-center p-4 ${!onChatScreen && isActive && "bg-light-blue-50"} ${!onChatScreen && !isActive && "bg-gray-50"} ${onChatScreen && "bg-gray-50"}`}
+    <div
+      className={`flex w-full min-w-60 ${
+        onClick && "cursor-pointer"
+      } gap-4 items-center p-4 ${
+        !onChatScreen && isActive && "bg-light-blue-50"
+      } ${!onChatScreen && !isActive && "bg-gray-50"} ${
+        onChatScreen && "bg-gray-50"
+      }`}
       onClick={onClick}
     >
-      <img 
+      <img
         src={getRandomImage(index)}
         alt={name}
         className="w-10 h-10 rounded-full"
       />
       <div>
         <p className="text-black font-bold text-lg">{name}</p>
-        <p className="text-gray-500">{timeAgo.format(Date.parse(onlineAt))}</p>
+        <p className="text-gray-500 text-sm">
+          {onlineAt && timeAgo.format(Date.parse(onlineAt))}
+        </p>
       </div>
     </div>
-  )
+  );
 }

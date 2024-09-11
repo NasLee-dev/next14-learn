@@ -20,6 +20,7 @@ export default function SignIn({ setView }) {
           : "http://localhost:3000/auth/callback",
       },
     });
+    console.log(data);
   };
 
   const signInMutation = useMutation({

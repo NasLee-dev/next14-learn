@@ -6,8 +6,8 @@ export default async function ChatPage() {
   const supabase = await createServerSupabaseClient();
   const {
     data: { session },
-    error,
   } = await supabase.auth.getSession();
+
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <ChatPeopleList loggedInUser={session?.user} />

@@ -1,9 +1,11 @@
-'use client'
+"use client";
+
 import { Button } from "@material-tailwind/react";
-import { createBrowserSupabaseClient } from "utils/supabase/client"
+import { createBrowserSupabaseClient } from "utils/supabase/client";
 
 export default function LogoutButton() {
   const supabase = createBrowserSupabaseClient();
+
   return (
     <Button
       onClick={async () => {
@@ -13,5 +15,5 @@ export default function LogoutButton() {
     >
       로그아웃
     </Button>
-  )
+  );
 }

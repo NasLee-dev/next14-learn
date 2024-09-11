@@ -1,14 +1,19 @@
-'use client'
+"use client";
 
-import { useState } from "react"
-import Signup from "./signup"
-import Signin from "./signin"
+import { useState } from "react";
+import SignUp from "./signup";
+import SignIn from "./signin";
 
 export default function Auth() {
-  const [view, setView] = useState('SIGNUP')
+  const [view, setView] = useState("SIGNUP");
+
   return (
     <main className="h-screen w-screen flex justify-center items-center bg-gradient-to-br from-purple-50 to-light-blue-50">
-      {view === 'SIGNIN' ? <Signin setView={setView} /> : <Signup setView={setView}/>}
+      {view === "SIGNUP" ? (
+        <SignUp setView={setView} />
+      ) : (
+        <SignIn setView={setView} />
+      )}
     </main>
-  )
+  );
 }
