@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Spinner } from "@material-tailwind/react";
+import { Spinner } from "@material-tailwind/react";
 import Person from "./Person";
 import Message from "./Message";
 import { useRecoilValue } from "recoil";
